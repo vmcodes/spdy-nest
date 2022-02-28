@@ -1,6 +1,6 @@
 {
   "name": "spdy-nest",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A wrapper for using HTTP2 in Nest JS",
   "keywords": [
     "nest",

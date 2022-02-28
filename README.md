@@ -36,7 +36,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
   await app.listen(3000);
 
-  await spdyNest(options, server, 443);
+  await spdyNest(httpsOptions, server, 443);
 }
 
 bootstrap();
