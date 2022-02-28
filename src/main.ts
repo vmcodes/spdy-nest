@@ -36,6 +36,7 @@ function spdyNest(options: Options, server: Application, port?: number) {
     }
   } catch (err) {
     console.log(err);
+    return process.exit(1);
   }
 }
 
