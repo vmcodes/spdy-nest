@@ -19,6 +19,7 @@ import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
 const spdyNest = require('spdy-nest');
+const cors = require('cors');
 const express = require('express');
 const server = express();
 
