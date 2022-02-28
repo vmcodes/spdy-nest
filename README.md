@@ -1,6 +1,6 @@
 ## Description
 
-<p>A wrapper for <a href="https://www.npmjs.com/package/spdy" target="_blank">SPDY Server</a> intended to make creating HTTP2 servers a little easier in <a href="https://www.npmjs.com/package/spdy" target="_blank">Nest JS</a>.</p>
+<p>A wrapper for <a href="https://github.com/spdy-http2/node-spdy" target="_blank">SPDY Server</a> intended to make creating HTTP2 servers a little easier in <a href="https://github.com/nestjs/nest" target="_blank">Nest JS</a>.</p>
 
 ## Installation
 
