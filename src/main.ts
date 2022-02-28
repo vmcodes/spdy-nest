@@ -1,6 +1,13 @@
 import { Application } from 'express';
 const spdy = require('spdy');
 const fs = require('fs');
+const origWarning = process.emitWarning;
+process.emitWarning = function (...args) {
+  if (args[2] !== 'DEP0066') {
+    // pass any other warnings through normally
+    return origWarning.apply(process, args);
+  }
+};
 
 interface Options {
   key: string;
@@ -25,6 +32,7 @@ function spdyNest(options: Options, server: Application, port?: number) {
       return spdy.createServer(httpsOptions, server).listen(PORT);
     } else {
       console.log('Express server not specified.');
+      return process.exit(1);
     }
   } catch (err) {
     console.log(err);
