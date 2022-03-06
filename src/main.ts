@@ -1,13 +1,6 @@
 import { Application } from 'express';
-const spdy = require('spdy');
+const spdy = require('@vmcodes/node-spdy');
 const fs = require('fs');
-const origWarning = process.emitWarning;
-process.emitWarning = function (...args) {
-  if (args[2] !== 'DEP0066') {
-    // pass any other warnings through normally
-    return origWarning.apply(process, args);
-  }
-};
 
 interface Options {
   key: string;
@@ -22,7 +15,7 @@ function spdyNest(options: Options, server: Application, port?: number) {
       key: fs.readFileSync(options.key),
       cert: fs.readFileSync(options.cert),
       spdy: {
-        protocols: ['h2', 'http/1.1'],
+        protocols: ['h2', 'http/1.1', 'http/1.0'],
         plain: false,
       },
     };
